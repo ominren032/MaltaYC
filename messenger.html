@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MYC - Reminders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/javaScript/autosize.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="icon" type="/image/x-icon" href="/assets/logos/Insignia.png">
+    <link rel="stylesheet" href="fonting.css">
+</head>
+<body>
+
+
+<div id="dummyDIV"></div>
+<div class="header" id="hdr" style="height:7%;">
+    <img src="/assets/logos/Logo_Header.svg" class="top_img" id="name_MYC" style="display: block; margin-left: auto; margin-right: auto; height:100%; z-index:1;">
+    <div width="100%" height="100%" style="z-index: 2;">
+        <a>
+            <img id="sign-out" src="assets/navigation/Sign-Out-icon.svg" style="position:absolute; height:55%; top:25%; right:5%">
+        </a>
+    </div>
+</div>
+
+
+<div id="main" style="width:90%; margin-left: auto; margin-right: auto; ">
+    <div class="opp_messages">
+        <div class="opp_msg_content_container ">
+            <h3 class="opp_content">Hello</h3>
+        </div>
+    </div>
+
+    <div class="you_messages">
+        <div class="you_msg_content_container">
+            <h3 class="you_content" >Hello</h3>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="nav" class="nav">
+    <form id="msgForm" style="position:fixed; width:100%; left:0px; box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2); background-color: #BE4A4B">
+        <textarea id="inputMSG" placeholder="Admins may type here . . ." style=" height:auto; font-size: 2vh; border-radius:0; min-height:6.5vh;"></textarea>
+        <img id="sendIMG" src="assets/features/Send_Button_GREY.svg" style="width: 6vh; position:absolute;  right:0.5vw; bottom: 5.5%;">
+    </form>
+    <div id="marker" style="position:absolute"></div>
+
+    <a><img class= "icon" id="certificates" src="/assets/navigation/Certificates_Button.svg" height="100%" style="opacity: 0.6; position:relative; z-index: 1"></a>
+    <a><img class = "icon" id="home" src="/assets/navigation/Home_Button.svg" height="100%" style="opacity: 1; position:relative; z-index: 1"></a>
+    <a><img class = "icon" id="reminders" src="/assets/navigation/Reminders_Button.svg" height="100%" style="opacity: 0.6; position:relative; z-index: 1"></a>
+</div>
+
+<script>
+    autosize(document.querySelector('#inputMSG')); /*what? why doesnt it work*/
+</script>
+
+<script src="javaScript/MessageFIX.js"></script>
+
+</body>
+</html>

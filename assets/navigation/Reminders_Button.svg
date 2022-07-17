@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="143" height="72" viewBox="0 0 143 72">
+  <g id="Reminders_Button" transform="translate(-285 -854)">
+    <g id="Behind_Reminder_Rectangle" transform="translate(285 854)" fill="#982425" stroke="#982425" stroke-width="1">
+      <rect width="143" height="72" stroke="none"/>
+      <rect x="0.5" y="0.5" width="142" height="71" fill="none"/>
+    </g>
+    <text id="Reminders_Caption" transform="translate(356.5 908.25)" fill="#fff" font-size="12" font-family="TrajanPro-Regular, Trajan Pro" letter-spacing="0.07em"><tspan x="-43.152" y="0">REMINDERS</tspan></text>
+    <g id="Bell_Icon_white" transform="translate(234.5 764.25)">
+      <path id="Path" d="M2,2A2.006,2.006,0,0,0,4,0H0A2,2,0,0,0,2,2Z" transform="translate(120 122)" fill="#fff"/>
+      <path id="Path-2" data-name="Path" d="M14,13.5v-5c0-3.07-1.64-5.64-4.5-6.32V1.5a1.5,1.5,0,0,0-3,0v.68C3.63,2.86,2,5.42,2,8.5v5l-2,2v1H16v-1Z" transform="translate(114 104.5)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

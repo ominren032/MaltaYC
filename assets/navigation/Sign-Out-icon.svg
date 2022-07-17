@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36">
+  <g id="Sign-out-icon" transform="translate(-472 -698.815)">
+    <g id="Rectangle_13" data-name="Rectangle 13" transform="translate(472 698.815)" fill="#be4a4b" stroke="rgba(112,112,112,0)" stroke-width="1">
+      <rect width="37" height="36" rx="12" stroke="none"/>
+      <rect x="0.5" y="0.5" width="36" height="35" rx="11.5" fill="none"/>
+    </g>
+    <path id="sign-out-icon-2" data-name="sign-out-icon" d="M10.09,15.59,11.5,17l5-5-5-5L10.09,8.41,12.67,11H3v2h9.67ZM19,3H5A2,2,0,0,0,3,5V9H5V5H19V19H5V15H3v4a2,2,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V5A2.006,2.006,0,0,0,19,3Z" transform="translate(479 704.815)" fill="#fff"/>
+  </g>
+</svg>

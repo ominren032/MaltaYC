@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Trajan-Pro';
+    src: url('/fonts/Trajan-Pro.ttf') format('truetype')
+}
+
+h1,h2,h3, p,label,input,button{
+    font-family: Trajan-Pro;
+    color: #FFFFFF;
+    opacity: 0.88;
+    font-weight:normal;
+
+}
+h2{
+    font-size: 50px;
+    letter-spacing:5px;
+}
+h3, p{
+    font-size:35px;
+}
+
+
+body{
+    background-color: #982524;
+    margin: 0px;
+    padding:0px;
+    width:100%;
+    height:100%
+}
+
+svg{
+    color: #BF2527;
+}
+
+input[type="submit"]{
+    -webkit-appearance:none;
+    opacity: 1;
+}
+input, textarea, button{
+    color:white;
+
+    box-sizing: border-box; /*Without this, the box's size will go over 100% because whatever padding applies is added to the width.
+                            by default, box-sizing is set to content-box...
+                            https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+
+    font-family: Trajan-Pro;
+    font-size: 18px;
+
+    padding: 10px 14px;
+    background-color: #be4a4b;
+
+    border:none;
+    border-radius:5px;
+
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #F8D8D8;
+    opacity: 0.7; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #F8D8D8;
+    opacity: 0.7;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #F8D8D8;
+    opacity: 0.7;
+}
+
+
+.formEl1 { grid-area: num; }
+.formEl2 { grid-area: date; }
+.formEl3 { grid-area: event; }
+.formEl4 { grid-area: submit; }
+
+.gridFormWrapper{
+    display:grid;
+    grid-template-areas:
+        'num date'
+        'event event'
+        'submit submit';
+}
+
+.splash{
+    position: absolute;  top: 50%;  left: 50%;  transform: translate(-50%, -50%);
+    /* puts on center of screen */
+}
+.nav{
+    background-color: #982524;
+    box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    height:7%;
+    display:flex;
+    justify-content: space-evenly;
+    padding: 1% 0px;
+}
+#marker{
+    position:absolute;
+    height: 7%;
+    width:100%;
+    transition:0.5s;
+    background-color: #FFFFFF;
+    left:0;
+    top:0;
+}
+
+.header{
+    background-color: #982524;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top:0px;
+    width:100%;
+    padding:2% 0;
+}
+
+.msgRabito{width:6%;}
+
+.opp_messages{
+    display:flex; justify-content: flex-start; width:100%;
+}
+.opp_msg_content_container{
+    background-color: #BF2527;border: none; border-radius:2vw; position:relative; padding: 0px 10px;
+}
+.opp_content{
+    color:#ffffff;
+    font-size: 1.9vh;
+}
+
+.you_messages{
+    display:flex; justify-content: flex-end;  width:100%;
+}
+.you_msg_content_container{
+    background-color: #ffffff; border: none; border-radius:2vw; position:relative; padding: 0px 10px;
+}
+.you_content{
+    color: #982524;
+    font-size: 1.9vh;
+}
+
+
+
+

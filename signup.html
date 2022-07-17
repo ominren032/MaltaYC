@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYC - Sign-Up</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="icon" type="/image/x-icon" href="/assets/logos/Insignia.png">
+  <link rel="stylesheet" href="fonting.css">
+</head>
+
+<body>
+<div id="dummyDIV"></div>
+<div class="header" id="hdr" style="height:7%">
+  <img src="/assets/logos/Logo_Header.svg" class="top_img" id="name_MYC" style="display: block; margin-left: auto; margin-right: auto; height:100%; z-index:1;">
+</div>
+
+<div id="main" style="position:relative; top:3vh; width:100%;">
+
+  <form style="display: block; margin-left: auto; margin-right: auto; max-width:700px; width:92%; ">
+
+
+    <label for="fname" >First Name:</label>
+    <input required type="text" id="fname" name="fname" style="box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16); width:100%">
+
+    <p></p>
+
+    <label for="lname" >Last Name:</label>
+    <input required type="text" id="lname" name="lname" style="box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16); width:100%">
+
+    <p></p>
+
+    <label for="email" >Email:</label>
+    <input required type="email" id="email" name="email" style="box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16); width:100%">
+
+    <p></p>
+
+    <label for="password" >Password:</label>
+
+    <input required type="password" id="password" name="password" style="width:100%; box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16);">
+
+    <p></p>
+
+    <label for="checkPass" >Confirm Password:</label>
+
+    <input required type="password" id="checkPass" name="checkPass" style="width:100%; box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16);">
+
+    <p></p>
+
+    <div style="display:flex; justify-content: flex-end; ">
+      <button id="signupBTN" type="submit" style="box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16);">Sign-Up</button>
+    </div>
+  </form>
+
+</div>
+
+<script src="javaScript/signup.js"></script>
+</body>
+</html>

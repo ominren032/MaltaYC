@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36">
+  <g id="Send_Button" transform="translate(-472 -698.815)">
+    <g id="Rectangle_13" data-name="Rectangle 13" transform="translate(472 698.815)" fill="#982425" stroke="rgba(112,112,112,0)" stroke-width="1">
+      <rect width="37" height="36" rx="12" stroke="none"/>
+      <rect x="0.5" y="0.5" width="36" height="35" rx="11.5" fill="none"/>
+    </g>
+    <path id="ic_near_me_24px" d="M21,3,3,10.53v.98l6.84,2.65L12.48,21h.98Z" transform="translate(478.5 704.815)" fill="#cb9292"/>
+  </g>
+</svg>
