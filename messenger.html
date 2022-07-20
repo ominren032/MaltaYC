@@ -5,14 +5,14 @@
     <title>MYC - Reminders</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="/javaScript/autosize.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <link rel="icon" type="/image/x-icon" href="/assets/logos/Insignia.png">
-    <link rel="stylesheet" href="fonting.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<!--<script type="module" src="/javaScript/fb.js"></script>-->
 
 <div id="dummyDIV"></div>
 <div class="header" id="hdr" style="height:7%;">
@@ -43,9 +43,10 @@
 
 <div id="nav" class="nav">
     <form id="msgForm" style="position:fixed; width:100%; left:0px; box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2); background-color: #BE4A4B">
-        <textarea id="inputMSG" placeholder="Admins may type here . . ." style=" height:auto; font-size: 2vh; border-radius:0; min-height:6.5vh;"></textarea>
-        <img id="sendIMG" src="assets/features/Send_Button_GREY.svg" style="width: 6vh; position:absolute;  right:0.5vw; bottom: 5.5%;">
+        <textarea id="inputMSG" placeholder="Admins may type here . . ." rows="1" style="font-size: 2vh; border-radius:0; max-height:40vh;"></textarea>
+        <img id="sendIMG" src="assets/features/Send_Button_GREY.svg" style="position:absolute;  right:0.5vw; bottom: 5.5%;">
     </form>
+
     <div id="marker" style="position:absolute"></div>
 
     <a><img class= "icon" id="certificates" src="/assets/navigation/Certificates_Button.svg" height="100%" style="opacity: 0.6; position:relative; z-index: 1"></a>
@@ -54,10 +55,20 @@
 </div>
 
 <script>
-    autosize(document.querySelector('#inputMSG')); /*what? why doesnt it work*/
+    //This will autoresize our textarea...
+    function expandTextarea(id) {
+        document.getElementById(id).addEventListener('keyup', function() {
+            this.style.height = 0;
+            this.style.height = this.scrollHeight + 'px';
+
+        }, false);
+    }
+
+    expandTextarea('inputMSG');
 </script>
 
 <script src="javaScript/MessageFIX.js"></script>
+
 
 </body>
 </html>

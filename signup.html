@@ -6,12 +6,16 @@
   <title>MYC - Sign-Up</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="icon" type="/image/x-icon" href="/assets/logos/Insignia.png">
-  <link rel="stylesheet" href="fonting.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="javaScript/signup.js"></script>
+
 </head>
 
 <body>
+<!--<script type="module" src="javaScript/signup.js"></script>-->
+
 <div id="dummyDIV"></div>
-<div class="header" id="hdr" style="height:7%">
+<div class="header" id="hdr" style="height:7%;">
   <img src="/assets/logos/Logo_Header.svg" class="top_img" id="name_MYC" style="display: block; margin-left: auto; margin-right: auto; height:100%; z-index:1;">
 </div>
 
@@ -35,6 +39,12 @@
 
     <p></p>
 
+    <label for="phone" >Phone Number:</label>
+    <input required type="tel" id="phone" name="phone" placeholder="###-###-####" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" style="box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16); width:100%">
+    <small style="position:relative; top:0.3vh; display:block;text-align:end;">Format: 123-456-7890</small>
+
+    <p></p>
+
     <label for="password" >Password:</label>
 
     <input required type="password" id="password" name="password" style="width:100%; box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16);">
@@ -48,12 +58,19 @@
     <p></p>
 
     <div style="display:flex; justify-content: flex-end; ">
-      <button id="signupBTN" type="submit" style="box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16);">Sign-Up</button>
+      <button id="signupBTN" style="box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16);">Sign-Up</button>
+      <!--button can't be type=submit cuz reloads page b4 sending-->
     </div>
   </form>
 
 </div>
+<p></p>
+<p style="font-size: 2vh;text-align: center;">Have an account? <a href="login.html" style="color:yellow;"><u>Click here</u></a> </p>
 
-<script src="javaScript/signup.js"></script>
+<script src="javaScript/signUpFIX.js"></script>
+
+
+
+
 </body>
 </html>

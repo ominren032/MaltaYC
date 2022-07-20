@@ -2,35 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MYC - Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYC - Certificate Form</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="icon" type="/image/x-icon" href="/assets/logos/Insignia.png">
-    <link rel="stylesheet" href="fonting.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <form>
-        <div class="gridFormWrapper" style="background-color:blue;>
-            <div class="formEl1">
-                <label for="hours"> Hours Served: </label>
-                <br>
-                <input type="number" name="hours" id="hours" height="20px"></input>
+<script type="module" src="/javaScript/fb.js"></script>
+<div id="dummyDIV"></div>
+<div class="header" id="hdr" style="height:7%">
+    <img src="/assets/logos/Logo_Header.svg" class="top_img" id="name_MYC" style="display: block; margin-left: auto; margin-right: auto; height:100%; z-index:1;">
+</div>
+
+<div id="main" style="position:relative; top:3vh; width:100%;">
+
+    <form style="display: block; margin-left: auto; margin-right: auto; max-width:700px; width:92%; flex: 1 1; ">
+        <div style="display: flex; justify-content: space-between; width:100%">
+            <div style="display:block; width:47%">
+                <label for="hours" >Hours Served:</label>
+                <input required type="number" id="hours" name="hours" placeholder="0" style="box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16); width:100%">
             </div>
 
-            <div class="formEl2">
-                <label for="dateServed"> Date Served </label>
-                <input type="date" name="dateServed" id="dateServed" height="20px" ></input>
+
+            <div style="display:block; width:47%;">
+                <label for="date" >Date Served:</label>
+                <input required type="date" id="date" name="date" style="box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16); width:100%">
             </div>
 
-            <div class="formEl3">
-                <label for="event"> Event </label>
-                <input type="text" name="event" id="event" height="20px"></input>
-            </div>
+        </div>
+        <p></p>
 
-            <div class="formEl4">
-                <input type="submit" style="font-family: Trajan-Pro; color:white;background-color:#BF2527;border-color:rgba(0,100,148,0%); width:90px; padding-top: 10px; padding-bottom: 10px; left:20px;border-radius: 10px; text-align: center;"></input>
-            </div>
+        <label for="event" >Event:</label>
+        <input required type="text" id="event" name="event" style="box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16); width:100%">
+
+        <p></p>
+
+        <div style="display:flex; justify-content: center; ">
+            <button id="signupBTN" type="submit" style="box-shadow: 0px 3px 6px rgba(0, 0,0, 0.16); width:100%; background-color: #BF2527; border-radius: 25px; padding: 2vh; ">Submit</button>
         </div>
     </form>
 
+</div>
+
+<script src="javaScript/signUpFIX.js"></script>
 </body>
 </html>

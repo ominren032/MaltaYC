@@ -3,7 +3,7 @@
     src: url('/fonts/Trajan-Pro.ttf') format('truetype')
 }
 
-h1,h2,h3, p,label,input,button{
+h1,h2,h3, p,label,input,button,small{
     font-family: Trajan-Pro;
     color: #FFFFFF;
     opacity: 0.88;
@@ -51,6 +51,14 @@ input, textarea, button{
     border:none;
     border-radius:5px;
 
+}
+
+textarea{
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+textarea::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
 }
 
 
@@ -116,7 +124,16 @@ input, textarea, button{
     top:0px;
     width:100%;
     padding:2% 0;
+
 }
+
+div#hdr{
+    z-index:2;
+}
+div#main{
+    z-index: 1;
+}
+
 
 .msgRabito{width:6%;}
 

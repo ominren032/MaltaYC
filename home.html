@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="icon" type="/image/x-icon" href="/assets/logos/Insignia.png">
-    <link rel="stylesheet" href="fonting.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<script type="module" src="/javaScript/fb.js"></script>
+
     <div id="dummyDIV"></div>
     <div class="header" id="hdr" style="height:7%">
         <img src="/assets/logos/Logo_Header.svg" class="top_img" id="name_MYC" style="display: block; margin-left: auto; margin-right: auto; height:100%; z-index:1;">
         <div width="100%" height="100%" style="z-index: 2;">
-            <a>
-                <img id="sign-out" src="assets/navigation/Sign-Out-icon.svg" style="position:absolute; height:55%; top:25%; right:5%">
-            </a>
+
+            <!--removed <a> tags because they are unnecessary-->
+            <img id="sign-out" src="assets/navigation/Sign-Out-icon.svg" style="position:absolute; height:55%; top:25%; right:5%">
+
         </div>
     </div>
 
@@ -25,10 +29,10 @@
         <img id="profile_Circ" style=" width:64%; display: block; margin-left: auto; margin-right: auto; margin-top:0;" src="/assets/features/Profile_Circle_Icon.svg">
 
         <div id="profile_info" style="background-color: #BE4A4B; margin:5.5%; padding-left:4%; padding-right:4%; padding-top:0.5%; padding-bottom: 0.5%">
-            <h2 style="text-align: center; font-size: 2.05vh; ">Oscar Minoso-Rendon</h2>
-            <h3 style="font-size: 1.7vh;">Status:</h3>
-            <h3 style="font-size: 1.7vh;">Email:</h3>
-            <h3 style="font-size: 1.7vh;">Phone:</h3>
+            <h2 id="userFullName" style="text-align: center; font-size: 2.05vh; ">Oscar Minoso-Rendon</h2>
+            <h3 id="userStatus" style="font-size: 1.7vh;">Status:</h3>
+            <h3 id="userEmail" style="font-size: 1.7vh;">Email:</h3>
+            <h3 id="userPhone" style="font-size: 1.7vh;">Phone:</h3>
         </div>
 
         <div style="display:inline-block; text-align: center; width:100%; ">
@@ -46,6 +50,15 @@
     </div>
 
     <script src="javaScript/layoutFIX.js"></script>
+    <script>
+        //script to display user info onto profile page.
+        let fullName;
+        let status;
+        let email;
+        let phone;
+
+        document.getElementById("userFullName")
+    </script>
 
 </body>
 </html>
