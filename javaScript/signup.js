@@ -1,7 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
-import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
+//import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
+import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,7 +23,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
-const database = getDatabase(app);
+
+const db = getFirestore(app);
 
 
 //Initialize variables
@@ -42,16 +44,27 @@ document.getElementById("signupBTN").addEventListener('click', (e) => {
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
+
             // ... user.uid
             // save data into real time database
-            set(ref(database, 'users/' + user.uid), {
+            /*set(ref(database, 'users/' + user.uid), {
                 firstName : firstName,
                 lastName : lastName,
                 email : email,
                 phoneNumber : phoneNumber,
                 isAdmin : adminStatus
 
-            })
+            })*/
+            let pathDoc = "users/" + user.uid;
+            let docData = {
+                firstName : firstName,
+                lastName : lastName,
+                email : email,
+                phoneNumber : phoneNumber,
+                isAdmin : adminStatus
+            };
+            let userSubCollection = doc(db, pathDoc);
+            setDoc(userSubCollection, docData)
                 .then(() => {
                     // Data saved successfully!
                     alert('user created successfully');

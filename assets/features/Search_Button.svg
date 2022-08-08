@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="36" viewBox="0 0 37 36">
+  <g id="Search_Button" transform="translate(-472 -698.815)">
+    <g id="Rectangle_13" data-name="Rectangle 13" transform="translate(472 698.815)" fill="#982425" stroke="rgba(112,112,112,0)" stroke-width="1">
+      <rect width="37" height="36" rx="12" stroke="none"/>
+      <rect x="0.5" y="0.5" width="36" height="35" rx="11.5" fill="none"/>
+    </g>
+    <path id="ic_zoom_out_24px" d="M15.5,14h-.79l-.28-.27a6.51,6.51,0,1,0-.7.7l.27.28v.79l5,4.99L20.49,19Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.494,4.494,0,0,1,9.5,14Z" transform="translate(479.01 705.325)" fill="#cb9292"/>
+  </g>
+</svg>

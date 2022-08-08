@@ -3,30 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <title>MYC - Certificates</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://unpkg.com/pdf-lib@1.17.1"></script>
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
 
     <link rel="icon" type="/image/x-icon" href="/assets/logos/Insignia.png">
     <link rel="stylesheet" href="style.css">
 
-
-
+    <!--<link rel="manifest" href="manifest.json">-->
 </head>
 <body>
-<script type="module" src="/javaScript/fb.js"></script>
-<div class="header" id="hdr">
-    <img src="/assets/logos/Logo_Header.svg" class="top_img" id="name_MYC" style="display: block; margin-left: auto; margin-right: auto; width:45%;">
+
+<div id="dummyDIV"></div>
+<div class="header" id="hdr" style="height:7%;">
+    <img src="/assets/logos/Logo_Header.svg" class="top_img" id="name_MYC" style="display: block; margin-left: auto; margin-right: auto; height:100%; z-index:1;">
+    <div width="100%" height="100%" style="z-index: 2;">
+        <a>
+            <img id="sign-out" src="assets/navigation/Sign-Out-icon.svg" style="position:absolute; height:55%; top:25%; right:5%">
+        </a>
+    </div>
 </div>
 
+<small style="text-align: center; width:100%; display:block; opacity:0.6;">No previous certificates on record...</small>
 <br>
-<div class="nav">
-    <img id="cert_indicator" src="/assets/White_Indicator.svg" width="33.33%" style="position:absolute; top:0px;left:0px">
-    <img hidden id="home_indicator" src="/assets/White_Indicator.svg" width="33.33%" style="position:absolute; top:0px;left:33.33%;">
-    <img hidden id="msg_indicator" src="/assets/White_Indicator.svg" width="33.33%" style="position:absolute; top:0px;left:66.66%">
+<div id="main" style="width:90%; margin-left: auto; margin-right: auto; ">
 
-    <a><img src="/assets/navigation/Certificates_Button.svg" width="33%" style="opacity: 1; position:relative; z-index: 1"></a>
-    <a><img src="/assets/navigation/Home_Button.svg" width="33%" style="opacity: 0.6; position:relative; z-index: 1"></a>
-    <a><img src="/assets/navigation/Reminders_Button.svg" width="33%" style="opacity: 0.6; position:relative; z-index: 1"></a>
+
+    <div class="certificate" style="display:none;">
+            <div class="opp_flex_messages">
+                <div class="opp_msg_content_container ">
+                    <h3 class="opp_content">+ data.val().formAnswers + </h3>
+                </div>
+            </div>
+
+            <div class="certificateBox" onclick="fillForm(this.id)" id="+ certificateId +">
+                <small style="display:none;"> + data.val().formAnswers +</small>
+                <img style=" border-radius:2.5vh;" src="assets/Certificate_Image.svg">
+                <button class="certificateButton">Download Certificate</button>
+            </div>
+    </div>
+
+
+
 </div>
+
+<div style = "display:flex; flex-direction: column">
+
+
+    <div id="nav" class="nav" style="box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2);">
+
+
+        <div id="marker" style="position:absolute"></div>
+
+        <a href="certificates.html"><img class= "icon" id="certificates" src="/assets/navigation/Certificates_Button.svg" height="100%" style="opacity: 1; position:relative; z-index: 1"></a>
+        <a href="home.html"><img class = "icon" id="home" src="/assets/navigation/Home_Button.svg" height="100%" style="opacity: 0.6; position:relative; z-index: 1"></a>
+        <a href="messenger.html"><img class = "icon" id="reminders" src="/assets/navigation/Reminders_Button.svg" height="100%" style="opacity: 0.6; position:relative; z-index: 1"></a>
+    </div>
+
+</div>
+
+<script>
+    const { PDFDocument } = PDFLib
+
+    async function fillForm(certificateId) {
+        let unpackagedInfo = JSON.parse(document.getElementById(certificateId).getElementsByTagName("small")[0].innerHTML)
+        let formName = unpackagedInfo[0]
+        let formHours = unpackagedInfo[1]
+        let formDate = unpackagedInfo[2]
+
+
+
+
+        // Fetch the PDF with form fields
+        const formUrl = 'documents/certificateHours.pdf'
+        const formPdfBytes = await fetch(formUrl).then(res => res.arrayBuffer())
+
+        // Load a PDF with form fields
+        const pdfDoc = await PDFDocument.load(formPdfBytes)
+
+        // Get the form containing all the fields
+        const form = pdfDoc.getForm()
+
+        // Get and set all fields in the PDF
+        form.getTextField('Volunteer_Name').setText(formName);
+        form.getTextField('Hours_Served').setText(formHours);
+        form.getTextField('Date_Served').setText(formDate);
+        form.getTextField('Signature_Name').setText("Dr. Oscar Minoso y de Cal, M.D.")
+
+        //Flatten the form's fields
+        form.flatten();
+
+        // Serialize the PDFDocument to bytes (a Uint8Array)
+        const pdfBytes = await pdfDoc.save()
+
+        // Trigger the browser to download the PDF document
+        download(pdfBytes, "certificate.pdf", "application/pdf");
+    }
+
+    document.getElementById("sign-out").addEventListener('click', (e) => {
+        e.preventDefault();
+        //retrieve inputs:
+
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            alert("Signed out successfully!")
+        }).catch((error) => {
+            // An error happened.
+            //const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+            alert(errorMessage);
+        });
+
+    });
+
+</script>
+
+
+<script src="javaScript/certificatesFIX.js"></script>
+<script type="module" src="javaScript/certificatesFunc.js"></script>
 
 </body>
 </html>

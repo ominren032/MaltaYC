@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="117.635" height="116" viewBox="0 0 117.635 116">
+  <defs>
+    <filter id="Profile_Circle" x="0" y="0" width="117.635" height="116" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="forward_to_DateTime_button" transform="translate(-299.182 -798)">
+    <g transform="matrix(1, 0, 0, 1, 299.18, 798)" filter="url(#Profile_Circle)">
+      <g id="Profile_Circle-2" data-name="Profile Circle" transform="translate(9 6)" fill="#982425" stroke="rgba(112,112,112,0.02)" stroke-width="1">
+        <ellipse cx="49.818" cy="49" rx="49.818" ry="49" stroke="none"/>
+        <ellipse cx="49.818" cy="49" rx="49.318" ry="48.5" fill="none"/>
+      </g>
+    </g>
+    <path id="ic_arrow_forward_24px" d="M29.5,4,25.006,8.494,42.792,26.313H4v6.375H42.792L25.006,50.506,29.5,55,55,29.5Z" transform="translate(328 824)" fill="#c14b4c"/>
+  </g>
+</svg>

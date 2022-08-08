@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="44" viewBox="0 0 45 44">
+  <g id="back_to_previous_button" transform="translate(-17 -72)">
+    <g id="Rectangle_22" data-name="Rectangle 22" transform="translate(17 72)" fill="#be4a4b" stroke="rgba(112,112,112,0)" stroke-width="1">
+      <rect width="45" height="44" rx="12" stroke="none"/>
+      <rect x="0.5" y="0.5" width="44" height="43" rx="11.5" fill="none"/>
+    </g>
+    <path id="ic_chevron_left_24px" d="M22.074,8.678,19.4,6,8,17.4l11.4,11.4,2.678-2.678-8.7-8.718Z" transform="translate(24.463 77.104)" fill="#f3e4e4"/>
+  </g>
+</svg>

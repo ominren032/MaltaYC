@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MYC - Directory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" type="/image/x-icon" href="/assets/logos/Insignia.png">
+    <link rel="stylesheet" href="style.css">
+
+    <!--<link rel="manifest" href="manifest.json">-->
+</head>
+<body>
+
+
+
+<div class="header" id="hdr" style="height:7%; display: flex; justify-content: center; align-items: center;">
+    <img src="/assets/logos/Youth_Corps_Directory_Name.svg" class="top_img" id="name_MYC" style="height:88%; z-index:1;">
+    <div width="100%" height="100%" style="z-index: 2;">
+
+        <!--removed <a> tags because they are unnecessary-->
+        <img id="goHome" onclick="returnHome()" src="assets/navigation/back_to_previous_button.svg" style="position:absolute; height:45%; top:25%; left:5%">
+        <img src="assets/logos/Insignia.png" style="position:absolute; height:65%; top:20%; right:5%">
+
+    </div>
+</div>
+
+<div id="srchForm" style="position:fixed; width:100%; left:0px; display:block; background-color: #BE4A4B; z-index:3; ">
+    <input id="inputSrch" onkeyup="search_function()" type ="text" placeholder="Search by name . . ." style="width:100vw; font-size: 2vh; border-radius:0; "></input>
+
+</div>
+
+<div id="dummyDIV"></div>
+
+<div id="main" style="margin-top:1vh; display: block; margin-left: auto; margin-right: auto; max-width:700px; width:92%;">
+
+</div>
+
+<img onclick="submitSelections()" style = "position:absolute; right:1%; bottom:2%;" src="assets/navigation/forward_to_DateTime_button.svg">
+
+<script src="javaScript/directoryFIX.js"></script>
+<script type="module" src="javaScript/directoryFunc.js"></script>
+
+</body>
+</html>
+
+<script>
+    function selectContact(userId){
+        console.log(userId)
+        let name = document.getElementById(userId).getElementsByClassName("contactContent")[0].getElementsByClassName("contactName")[0].innerHTML;
+        let relevantUserData = [userId, name];
+        console.log(relevantUserData.toString());
+
+        let checkMark = document.getElementById(userId).getElementsByClassName("contactCheckMark")[0].getElementsByTagName("img")[0]
+        let checkMarkId = checkMark.id;
+        if(checkMark.style.opacity == 0.38){ //if selected
+            checkMark.style.opacity = "1";
+            contactsArrayForExport[checkMarkId] = relevantUserData;
+            console.log(JSON.stringify(contactsArrayForExport))
+        }else{ //if de-selected
+            checkMark.style.opacity = "0.38";
+            contactsArrayForExport[checkMarkId] = null;
+            console.log(JSON.stringify(contactsArrayForExport))
+        }
+
+    }
+
+    function submitSelections(){
+        sessionStorage.setItem('selectedContacts', JSON.stringify(contactsArrayForExport));
+        location.assign("form.html")
+    }
+
+    function search_function() {
+        let input = document.getElementById('inputSrch').value
+        input=input.toLowerCase();
+
+        let x = document.getElementsByClassName('contactName');
+        let y = document.getElementsByClassName('contactPhone');
+        let z = document.getElementsByClassName('contact');
+
+
+        for (i = 0; i < x.length; i++) {
+            if ((!x[i].innerHTML.toLowerCase().includes(input))&&(!y[i].innerHTML.toLowerCase().includes(input))) {
+                z[i].style.display="none";
+            }
+            else {
+                z[i].style.display="flex";
+            }
+        }
+    }
+
+    function returnHome(){
+        location.assign("home.html")
+    }
+</script>
