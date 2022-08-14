@@ -5,7 +5,7 @@
   "background_color": "#982524",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "/",
+  "start_url": "/InProgMaltaYouthCorpsAPP/index.html",
   "icons": [
     {
       "src": "assets/icons/icon-60x60.png",

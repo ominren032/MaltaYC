@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Trajan-Pro';
+    src: url('/logoFonts/Trajan-Pro.ttf') format('truetype')
+}
+text{
+    font-family: 'Roboto Light';
+}
